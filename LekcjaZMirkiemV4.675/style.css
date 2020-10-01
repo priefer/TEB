@@ -1,0 +1,126 @@
+*{
+  padding: 0;
+  margin: 0;
+  color: white;
+}
+html{
+  height: 100%;
+  background-image: url("https://images2.alphacoders.com/982/982992.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+#rejestracja{
+  display: flex;
+  justify-content: center;
+}
+#rejestracja form{
+  padding: 3em;
+}
+#rejestracja form label{
+  color: white;
+  font-size: 1.2em;
+}
+header{
+  display: flex;
+  justify-content: space-between;
+  padding: 2em;
+  font-size: 2em;
+  margin-bottom: 2em;
+}
+header a{
+  color: orange;
+  text-decoration: none;
+
+}
+header a:hover{
+  transition: .5s;
+  color:red;
+}
+main{
+  width: 5em;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  justify-content: center;
+}
+form{
+  font-size: 1.2em;
+}
+form input{
+  padding: .4em;
+  color: white;
+  background-color: rgba(200,200,200, .7);
+  font-size: 2em;
+  border: 0;
+  outline: none;
+  border-radius: 20px 10px;
+  box-shadow: 0 0 10em #aaa;
+  transition: 0.5s;
+}
+form input:hover{
+  box-shadow: 0 0 10em #fff;
+}
+form input:focus{
+  background-color: rgba(200,200,200, .7);
+}
+form input::placeholder{
+  color: white;
+}
+
+#sub{
+  border-radius: 10px 20px;
+  background-color: rgba(100,255,100, .7);
+}
+#sub:hover{
+  background-color: rgba(90,220,90, .9);
+}
+
+#gra{
+  font-size: 1.5em;
+  color: white;
+  display: flex;
+  justify-content: center;
+  margin-top: 5em;
+}
+#gra a{
+  color: orange;
+  text-decoration: none;
+}
+#gra a:hover{
+  transition: .5s;
+  color: red
+}
+#gra p {
+  padding: .2em;
+}
+#witamy{
+  width: 100%;
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  padding: 2em;
+  font-size: 1.5em;
+}
+#witamy div a{
+  color: orange;
+}
+#rejestracjaBtn{
+  font-size: 20px;
+  width: 8em;
+  height: 3em;
+  background-color:rgb(52, 67, 202);
+  border: 0;
+  border-radius: 40px;
+  box-shadow: 0 0 2em rgb(52, 67, 202);
+  opacity: 0.8;
+  transition: 0.5s;
+}
+#rejestracjaBtn:hover{
+  cursor: pointer;
+  opacity: 0.9;
+  outline:none;
+}
