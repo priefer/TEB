@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+	<meta charset="UTF-8">
+	<meta name="author" content="Kamil Priefer">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	
+	<title>Oodawanie pisemne</title>
+	<style>
+		table {
+			text-align:center;
+			margin:auto;
+		}
+		td {
+			width:40px;
+			height:55px;
+			border: 1px solid black;
+			font-size:40px;
+		}
+		td.bezramki {
+			border: 0px;
+		}
+	
+	</style>
+</head>
+
+<body>
+	<div style="background-color:lightblue; padding:20">
+		<h1>Wpisz dwie liczby</h1>
+		<form>
+			<label for="liczba1">Pierwsza liczba:</label>
+			<input type="text" id="liczba1" maxlength="5">
+			<label for="liczba2">Druga liczba:</label>	
+			<input type="text" id="liczba2" maxlength="5">
+			<br/><br/>
+			<button type="button" onclick="wyczyscPola()">Wyczyść pola</button> 
+			<button type="button" onclick="wprowadzLiczby()">Wprowadź liczby</button> 
+			<button type="button" onclick="wykonajOodawanie()">Wykonaj oodawanie</button> 
+		</form>
+	</div>
+	<div style="background-color:lightgreen; padding:20;">
+		<table>
+			<tr>
+				<td class='bezramki'></td>
+				<td id="1_1"></td>
+				<td id="1_2"></td>
+				<td id="1_3"></td>
+				<td id="1_4"></td>
+				<td id="1_5"></td>	
+			</tr>
+			<tr>
+				<td>-</td>
+				<td id="2_1"></td>
+				<td id="2_2"></td>
+				<td id="2_3"></td>
+				<td id="2_4"></td>
+				<td id="2_5"></td>	
+			</tr>
+		</table>
+		<hr style="width:300px; border:1px solid black;">
+		<table>
+			<tr>
+				<td id="3_0"></td>
+				<td id="3_1"></td>
+				<td id="3_2"></td>
+				<td id="3_3"></td>
+				<td id="3_4"></td>
+				<td id="3_5"></td>	
+			</tr>
+		</table>
+		
+	</div>
+
+	<script>
+		var roznica;
+	function wyczyscPola() {
+		document.getElementById('liczba1').value = "";
+		document.getElementById('liczba2').value = "";
+		for (i = 1; i < 6; i++) {
+			document.getElementById('1_' + i).innerHTML = "";
+			document.getElementById('2_' + i).innerHTML = "";
+		}
+		for (i = 0; i < 6; i++) {
+			document.getElementById('3_' + i).innerHTML = "";
+		}
+	}
+	
+	function wprowadzLiczby() {
+		var x1 = document.getElementById('liczba1').value;
+		var x2 = document.getElementById("liczba2").value;
+		roznica = x1-x2;
+		
+		if (!isNaN(x1) && !isNaN(x2) && x1 != '' && x2 != '') {
+			// wprowadzenie pierwszej liczby
+			for (i = 0; i < x1.length; i++) {
+				document.getElementById('1_' + (i + 6 - x1.length)).innerHTML = x1.substring(i, i + 1);
+			}
+			// wprowadzenie drugiej liczby
+			for (i = 0; i < x2.length; i++) {
+				document.getElementById('2_' + (i + 6 - x2.length)).innerHTML = x2.substring(i, i + 1);
+			}
+			// czyszczenie sumy
+			for (i = 0; i < 6; i++) {
+				document.getElementById('3_' + i).innerHTML = "";
+			}			
+		} else {
+			alert("Wprowadź poprawne liczby");
+		}
+	}
+	
+	function wykonajOodawanie() {
+		roznica = ""+ roznica;
+		if (roznica.length<6) {
+			while (6 > roznica.length) {
+				roznica = " " + roznica;
+			}
+		}
+		for (i = 5; i >= 0; i--) {
+				document.getElementById('3_' + i).innerHTML = roznica[i];
+		}
+	}
+	
+	</script>
+	
+</body>
+</html>
