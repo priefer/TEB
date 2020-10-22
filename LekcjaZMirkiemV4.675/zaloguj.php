@@ -7,7 +7,17 @@
 		header('Location: index.php');
 		exit();
 	}
-
+	$sekret = "6Lcl-c8ZAAAAAIyysuolrK2j2sLAEQQKm0R8nyi4";
+         
+	$sprawdz = file_get_contents('https://www.google.com/recaptcha/api/siteverify?secret='.$sekret.'&response='.$_POST['g-recaptcha-response']);
+	 
+	$odpowiedz = json_decode($sprawdz);
+	 
+	if ($odpowiedz->success==false)
+	{
+		$wszystko_OK=false;
+		$_SESSION['e_bot']="<br><p style='color: red;'>Potwierdź, że nie jesteś botem!</p>";
+	}
 	require_once "connect.php";
 
 	$polaczenie = @new mysqli($host, $db_user, $db_password, $db_name);

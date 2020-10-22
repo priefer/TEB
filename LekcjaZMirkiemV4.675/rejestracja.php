@@ -46,6 +46,19 @@
 			$wszystko_OK=false;
 			$_SESSION['e_regulamin']="Potwierdź akceptację regulaminu!";
 		}
+
+		$sekret = "6Lcl-c8ZAAAAAIyysuolrK2j2sLAEQQKm0R8nyi4";
+         
+        $sprawdz = file_get_contents('https://www.google.com/recaptcha/api/siteverify?secret='.$sekret.'&response='.$_POST['g-recaptcha-response']);
+         
+        $odpowiedz = json_decode($sprawdz);
+         
+        if ($odpowiedz->success==false)
+        {
+            $wszystko_OK=false;
+            $_SESSION['e_bot']="Potwierdź, że nie jesteś botem!";
+		}
+		
 		$_SESSION['fr_nick'] = $nick;
 		$_SESSION['fr_email'] = $email;
 		$_SESSION['fr_haslo1'] = $haslo1;
@@ -119,6 +132,7 @@
 	<meta charset="utf-8" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 	<title>Osadnicy - załóż darmowe konto!</title>
+	<script src='https://www.google.com/recaptcha/api.js'></script>
 	<link rel="stylesheet" href="style.css">
 
 	<style>
@@ -208,8 +222,9 @@
 				unset($_SESSION['e_regulamin']);
 			}
 		?>
-
-
+		<div id="recaptchaContainer" style="transform:scale(1.3);transform-origin:0 0">
+		<div class="g-recaptcha" data-sitekey="6Lcl-c8ZAAAAACmMRaoYE2e7h9z8mJIrXmn-08aj"></div>
+		</div>
 
 		<?php
 			if (isset($_SESSION['e_bot']))
