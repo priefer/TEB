@@ -1,0 +1,14 @@
+C:\kp4a-biblioteka\biblioteka\biblioteka\obj\Debug\biblioteka.csprojAssemblyReference.cache
+C:\kp4a-biblioteka\biblioteka\biblioteka\obj\Debug\biblioteka.Form1.resources
+C:\kp4a-biblioteka\biblioteka\biblioteka\obj\Debug\biblioteka.Properties.Resources.resources
+C:\kp4a-biblioteka\biblioteka\biblioteka\obj\Debug\biblioteka.csproj.GenerateResource.cache
+C:\kp4a-biblioteka\biblioteka\biblioteka\obj\Debug\biblioteka.csproj.CoreCompileInputs.cache
+C:\kp4a-biblioteka\biblioteka\biblioteka\bin\Debug\biblioteka.exe.config
+C:\kp4a-biblioteka\biblioteka\biblioteka\bin\Debug\biblioteka.exe
+C:\kp4a-biblioteka\biblioteka\biblioteka\bin\Debug\biblioteka.pdb
+C:\kp4a-biblioteka\biblioteka\biblioteka\obj\Debug\biblioteka.exe
+C:\kp4a-biblioteka\biblioteka\biblioteka\obj\Debug\biblioteka.pdb
+C:\kp4a-biblioteka\biblioteka\biblioteka\obj\Debug\biblioteka.frmDodajCzytelnika.resources
+C:\kp4a-biblioteka\biblioteka\biblioteka\obj\Debug\biblioteka.frmDodajKsiazke.resources
+C:\kp4a-biblioteka\biblioteka\biblioteka\obj\Debug\biblioteka.frmTworzStrukture.resources
+C:\kp4a-biblioteka\biblioteka\biblioteka\obj\Debug\biblioteka.frmWypozycz.resources
